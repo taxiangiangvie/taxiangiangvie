@@ -702,20 +702,21 @@
               <h3 class="text-xl sm:text-2xl font-semibold tracking-tight text-slate-900">Gửi yêu cầu đặt xe</h3>
               <p class="mt-2 text-sm text-slate-600">Điền thông tin cơ bản, chúng tôi sẽ gọi lại xác nhận.</p>
 
-              <form id="contactForm" class="mt-6 grid sm:grid-cols-2 gap-4" autocomplete="on" action="https://api.web3forms.com/submit" method="POST">
+             <form id="contactForm"
+      action="https://api.web3forms.com/submit"
+      method="POST">
 
-                <input type="hidden" name="access_key" value="182bff72-ae40-4b22-8654-88e1be6972d3">
+  <input type="hidden" name="access_key" value="182bff72-ae40-4b22-8654-88e1be6972d3">
 
-                  <input type="text" name="Họ và tên" placeholder="Nhập họ và tên" required>
-                  <input type="tel" name="Số điện thoại" placeholder="Ví dụ: 09xx xxx xxx" required>
-                  <input type="text" name="Điểm đón">
-                  <input type="text" name="Điểm đến">
-                  <input type="text" name="Loại dịch vụ">
-                  <input type="text" name="Thời gian dự kiến">
-                  <textarea name="Ghi chú"></textarea>
+  <input type="text" name="name" placeholder="Nhập họ và tên" required>
+  <input type="tel" name="phone" placeholder="Ví dụ: 0393 555 198" required>
+  <input type="text" name="pickup" placeholder="Điểm đón">
+  <input type="text" name="destination" placeholder="Điểm đến">
+  <input type="text" name="service" placeholder="Loại dịch vụ">
+  <input type="text" name="time" placeholder="Thời gian dự kiến">
+  <textarea name="note" placeholder="Ghi chú"></textarea>
 
-                 <button type="submit">Gửi yêu cầu</button>
-
+  <button type="submit">Gửi yêu cầu</button>
 
                 <label class="grid gap-2">
                   <span class="text-xs font-medium text-slate-700">Họ và tên</span>
