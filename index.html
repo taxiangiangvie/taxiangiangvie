@@ -940,6 +940,36 @@
     sliderEl?.addEventListener('mouseenter', stopAuto);
     sliderEl?.addEventListener('mouseleave', startAuto);
     startAuto();
+    const form = document.getElementById("contactForm");
+const result = document.getElementById("formToast");
+
+form.addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  result.classList.remove("hidden");
+  result.innerHTML = "Đang gửi...";
+
+  const formData = new FormData(form);
+
+  const response = await fetch(form.action, {
+    method: "POST",
+    body: formData
+  });
+
+  const data = await response.json();
+
+  if (data.success) {
+    result.innerHTML = "🎉 Đã gửi thành công!";
+    form.reset();
+  } else {
+    result.innerHTML = "❌ Có lỗi xảy ra!";
+  }
+
+  setTimeout(() => {
+    result.classList.add("hidden");
+  }, 4000);
+});
+
 
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
