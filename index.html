@@ -701,17 +701,18 @@
             <div class="p-6 sm:p-8">
               <h3 class="text-xl sm:text-2xl font-semibold tracking-tight text-slate-900">Gửi yêu cầu đặt xe</h3>
               <p class="mt-2 text-sm text-slate-600">Điền thông tin cơ bản, chúng tôi sẽ gọi lại xác nhận.</p>
-<form action="https://api.web3forms.com/submit" method="POST">
+<form id="contact-form" action="https://api.web3forms.com/submit" method="POST">
+  <input type="hidden" name="access_key" value="YOUR_ACCESS_KEY">
 
-  <input type="hidden" name="access_key" value="182bff72-ae40-4b22-8654-88e1be6972d3">
+  <input type="text" name="name" placeholder="Họ và tên" required>
+  <input type="tel" name="phone" placeholder="Số điện thoại" required>
+  <textarea name="message" placeholder="Nội dung" required></textarea>
 
-  <input type="text" name="name" required>
-  <input type="email" name="email" required>
-  <textarea name="message" required></textarea>
+  <button type="submit">Gửi thông tin</button>
 
-  <button type="submit">Gửi</button>
-
+  <p id="result"></p>
 </form>
+
 
                 <label class="grid gap-2">
                   <span class="text-xs font-medium text-slate-700">Họ và tên</span>
@@ -939,16 +940,6 @@
     sliderEl?.addEventListener('mouseenter', stopAuto);
     sliderEl?.addEventListener('mouseleave', startAuto);
     startAuto();
-
-    // Contact form (client-side demo behavior)
-    const form = document.getElementById('contactForm');
-    const toast = document.getElementById('formToast');
-    form?.addEventListener('submit', (e) => {
-      e.preventDefault();
-      toast.classList.remove('hidden');
-      form.reset();
-      setTimeout(() => toast.classList.add('hidden'), 4500);
-    });
 
     // Year
     document.getElementById('year').textContent = new Date().getFullYear();
